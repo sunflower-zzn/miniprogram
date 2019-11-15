@@ -14,7 +14,7 @@
 
 一些信息需要修改，才能符合不同的社团。例如北大猫协的简介，在pages/about/about.wxml 文件里，会徽图片在pages/images里，pages/文案 给出了一个在图鉴后面添加其它文字的例子。
 
-另外还有一个比较重要的事情就是改猫图片，我是在http://gitee.com上传图片，然后让小程序调用图片，因为小程序允许上传的文件大小很小。所以需要修改pages/wxml.txt 文件中的调用地址（把"https://gitee.com/circlelq/cat_photos/raw/master/{{item.name}}_circle.png" 改成你的地址），以及pages/index/index.wxml文件中的地址，注意一下图片格式和命名方法。
+另外还有一个比较重要的事情就是改猫图片，我是在http://gitee.com 上传图片，然后让小程序调用图片，因为小程序允许上传的文件大小很小。所以需要修改pages/wxml.txt 文件中的调用地址（把"https://gitee.com/circlelq/cat_photos/raw/master/{{item.name}}_circle.png" 改成你的地址），以及pages/index/index.wxml文件中的地址，注意一下图片格式和命名方法。
 
 ## 我们的小程序
 
