@@ -2,11 +2,7 @@
  Page({ 
  data: { 
  catlist: [
-  { name:"杰希"},
- { name:"英杰"},
- { name:"一帆"},
- { name:"土谦"},
- { name:"小黄鸭"},
+  { name:"虎子"},
 
     ],
     screenWidth: 0,

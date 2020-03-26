@@ -1,9 +1,11 @@
 Page({ 
  data: {
-catname:"一帆",
+catname:"虎子",
  catitems:[ 
+{category:"昵称",
+ content:" 虎爷/虎妞",},
 {category:"毛色",
- content:" 奶牛",},
+ content:" 白狸",},
 {category:"性别",
  content:" 公",},
 {category:"状况",
@@ -11,15 +13,15 @@ catname:"一帆",
 {category:"绝育情况",
  content:" 未绝育",},
 {category:"外貌",
- content:" 无情的警长",},
+ content:" 小狮子",},
 {category:"性格",
- content:" 怕人 安全距离1m以内",},
-{category:"第一次被目击时间",
- content:" 2017冬",},
+ content:" 亲人不可抱 可摸",},
 {category:"编写日期",
- content:" 2020-01-21",},
+ content:" 2020-03-26",},
 ], 
 nums:[
+{ num: 1 },
+{ num: 2 },
 ]},
   onPullDownRefresh:function(){
     wx.stopPullDownRefresh()
