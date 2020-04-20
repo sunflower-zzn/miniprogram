@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <navigator url="/pages/about/about" >
   <view style="display:flex; justify-content:center; align-items:center;">
-    <image mode="widthFix" src="/pages/images/huihui.jpg" style= "width: 93%;">
+    <image mode="widthFix" src="/pages/images/huihui.jpg" style= "width: 63%;">
     </image>
   </view>
 </navigator>

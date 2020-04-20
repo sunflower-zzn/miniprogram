@@ -18,6 +18,8 @@ data = workbook.sheets()[0]
 rowNum = data.nrows  # sheet行数
 colNum = data.ncols  # sheet列数
 
+
+# ctype : 0 empty,1 string, 2 number, 3 date, 4 boolean, 5 error
 # 获取所有单元格的内容
 data_list = []
 for i in range(12, rowNum):
@@ -50,8 +52,12 @@ for i in range(rowNum):
 
 """
 
-
-
+def character(x):
+	if isinstance(x, str):
+		return x
+	else:
+		x = '亲人可抱' if x == 6 else '亲人不可抱 可摸' if x == 5 else '薛定谔亲人' if x == 4 else '吃东西时可以一直摸' if x == 3 else '吃东西时可以摸一下' if x == 2 else '怕人 安全距离1m以内' if x == 1 else '怕人 安全距离1m以外' if x == 0 else '未知 数据缺失'
+		return x
 labels = [
 	[2, '名字', lambda x:'【还没有名字】' if len(x) < 1 else x],
 	[3, '是否写入图鉴', lambda x:x],
@@ -63,7 +69,8 @@ labels = [
 	[10, '绝育时间', lambda x:str(x)],
 	[11, '出生时间', lambda x:x],
 	[12, '外貌', lambda x:x],
-	[13, '性格', lambda x: '亲人可抱' if x == 6 else '亲人不可抱 可摸' if x == 5 else '薛定谔亲人' if x == 4 else '吃东西时可以一直摸' if x == 3 else '吃东西时可以摸一下' if x == 2 else '怕人 安全距离1m以内' if x == 1 else '怕人 安全距离1m以外' if x == 0 else '未知 数据缺失' ],
+	#[13, '性格', lambda x: '亲人可抱' if x == 6 else '亲人不可抱 可摸' if x == 5 else '薛定谔亲人' if x == 4 else '吃东西时可以一直摸' if x == 3 else '吃东西时可以摸一下' if x == 2 else '怕人 安全距离1m以内' if x == 1 else '怕人 安全距离1m以外' if x == 0 else '未知 数据缺失' ],
+	[13, '性格', character(x)],
 	[14, '第一次被目击时间', lambda x: str(x)],
 ]
 
@@ -83,7 +90,7 @@ for i in range(rowNum):
 
 #创建猫文件夹
 if not os.path.exists('cats'):
-	os.makedirs('cats') 
+	os.makedirs('cats')
 
 for line in data_json:
 	if line['是否写入图鉴'] != '':
@@ -121,7 +128,7 @@ for line in data_json:
 				continue
 			with open('wxml.txt','r') as f2:
 				f.write(f2.read())
-				
+
 #编写index文件
 with open('index/' + 'index.js', 'w') as f:
 	f.write( '//index.js \n Page({ \n data: { \n catlist: [\n ')
