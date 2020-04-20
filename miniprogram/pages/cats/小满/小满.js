@@ -1,27 +1,25 @@
 Page({ 
  data: {
-catname:"虎子",
+catname:"小满",
  catitems:[ 
-{category:"昵称",
- content:" 虎爷/虎妞",},
 {category:"毛色",
- content:" 白狸",},
+ content:" 黑",},
 {category:"性别",
  content:" 公",},
 {category:"状况",
- content:" 健康",},
+ content:" 送养",},
 {category:"绝育情况",
  content:" 未绝育",},
+{category:"出生时间",
+ content:" 2019-08-01",},
 {category:"外貌",
- content:" 小狮子",},
+ content:" 是一只有点对眼的小黑猫，短毛",},
 {category:"性格",
- content:" 亲人不可抱 可摸",},
+ content:" 非常皮，黑猫的外表奶牛猫的灵魂",},
 {category:"编写日期",
  content:" 2020-04-21",},
 ], 
 nums:[
-{ num: 1 },
-{ num: 2 },
 ]},
   onPullDownRefresh:function(){
     wx.stopPullDownRefresh()

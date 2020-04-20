@@ -1,27 +1,26 @@
 Page({ 
  data: {
-catname:"虎子",
+catname:"雪儿",
  catitems:[ 
-{category:"昵称",
- content:" 虎爷/虎妞",},
 {category:"毛色",
- content:" 白狸",},
+ content:" 白猫",},
 {category:"性别",
- content:" 公",},
+ content:" 母",},
 {category:"状况",
- content:" 健康",},
+ content:" 调养",},
 {category:"绝育情况",
  content:" 未绝育",},
+{category:"出生时间",
+ content:" 2019-11-01",},
 {category:"外貌",
- content:" 小狮子",},
+ content:" 短毛白，异瞳",},
 {category:"性格",
- content:" 亲人不可抱 可摸",},
+ content:" 调皮，对什么都好奇，能吃，如果人靠近会害怕躲开，但真的摸肚子很容易推倒会呼噜呼噜。和猫能够友好相处，喜欢跟着大猫。",},
 {category:"编写日期",
  content:" 2020-04-21",},
 ], 
 nums:[
 { num: 1 },
-{ num: 2 },
 ]},
   onPullDownRefresh:function(){
     wx.stopPullDownRefresh()

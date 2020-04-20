@@ -11,15 +11,16 @@ import time
 today = time.strftime("%Y-%m-%d", time.localtime())
 
 
-workbook = xlrd.open_workbook('猫咪档案.xlsx')
+workbook = xlrd.open_workbook('./猫咪档案.xlsx')
 
-data = workbook.sheets()[0]
+data = workbook.sheets()[1]
 
 rowNum = data.nrows  # sheet行数
 colNum = data.ncols  # sheet列数
 
 
 # ctype : 0 empty,1 string, 2 number, 3 date, 4 boolean, 5 error
+
 # 获取所有单元格的内容
 data_list = []
 for i in range(12, rowNum):
@@ -31,6 +32,7 @@ for i in range(12, rowNum):
 			dt = xlrd.xldate.xldate_as_tuple(data.cell_value(i, j), 0)
 			rowlist.append('%04d-%02d-%02d' % dt[0:3])
 			continue
+
 		if ctype == 2 and cell % 1 == 0.0:  # ctype为2且为浮点
 			cell = int(cell)
 			rowlist.append(cell)
@@ -43,14 +45,13 @@ for i in range(12, rowNum):
 
 rowNum -= 12
 
-"""
 
-for i in range(rowNum):
-	for j in range(colNum):
-		print(data_list[i][j], ' ',end="")
-	print('\n')
 
-"""
+# for i in range(rowNum):
+# 	for j in range(colNum):
+# 		print(data_list[i][j], ' ',end="")
+# 	print('\n')
+
 
 def character(x):
 	if isinstance(x, str):
@@ -58,6 +59,8 @@ def character(x):
 	else:
 		x = '亲人可抱' if x == 6 else '亲人不可抱 可摸' if x == 5 else '薛定谔亲人' if x == 4 else '吃东西时可以一直摸' if x == 3 else '吃东西时可以摸一下' if x == 2 else '怕人 安全距离1m以内' if x == 1 else '怕人 安全距离1m以外' if x == 0 else '未知 数据缺失'
 		return x
+
+
 labels = [
 	[2, '名字', lambda x:'【还没有名字】' if len(x) < 1 else x],
 	[3, '是否写入图鉴', lambda x:x],
@@ -70,7 +73,7 @@ labels = [
 	[11, '出生时间', lambda x:x],
 	[12, '外貌', lambda x:x],
 	#[13, '性格', lambda x: '亲人可抱' if x == 6 else '亲人不可抱 可摸' if x == 5 else '薛定谔亲人' if x == 4 else '吃东西时可以一直摸' if x == 3 else '吃东西时可以摸一下' if x == 2 else '怕人 安全距离1m以内' if x == 1 else '怕人 安全距离1m以外' if x == 0 else '未知 数据缺失' ],
-	[13, '性格', character(x)],
+	[13, '性格', lambda x:character(x)],
 	[14, '第一次被目击时间', lambda x: str(x)],
 ]
 
@@ -81,7 +84,6 @@ for i in range(rowNum):
 
 	if len(data_list[i][5]) < 1: # 毛色都不知道那就是没有【x
 		continue
-
 	for j in labels:
 		json_line[j[1]] = j[2](data_list[i][j[0]])
 
@@ -93,6 +95,7 @@ if not os.path.exists('cats'):
 	os.makedirs('cats')
 
 for line in data_json:
+	print(line)
 	if line['是否写入图鉴'] != '':
 		if not os.path.exists('cats/'+ line['名字']):
 			os.makedirs('cats/'+ line['名字'])#创建每只猫的文件夹
@@ -102,11 +105,11 @@ for line in data_json:
 			for j in labels:
 				#打印名字，需要复制到index.js文件中
 				if j[1] == '名字':
-					#print('{ name:"'+str(line[j[1]])+'"},')
+					print('{ name:"'+str(line[j[1]])+'"},')
 					continue
 				if str(line[j[1]]) == '' or j[1] == '是否写入图鉴':
 					continue
-				#print(j[1] + " " + str(line[j[1]]))
+				print(j[1] + " " + str(line[j[1]]))
 				f.write('{category:"' + j[1] + '",\n content:" ' + str(line[j[1]]) + '",},\n')
 			#编写日期
 			f.write('{category:"编写日期",\n content:" ' + today + '",},\n')

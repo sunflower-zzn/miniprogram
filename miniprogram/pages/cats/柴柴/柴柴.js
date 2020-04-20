@@ -1,27 +1,26 @@
 Page({ 
  data: {
-catname:"虎子",
+catname:"柴柴",
  catitems:[ 
-{category:"昵称",
- content:" 虎爷/虎妞",},
 {category:"毛色",
- content:" 白狸",},
+ content:" 三花",},
 {category:"性别",
- content:" 公",},
+ content:" 母",},
 {category:"状况",
  content:" 健康",},
 {category:"绝育情况",
  content:" 未绝育",},
+{category:"出生时间",
+ content:" 2019-08-27",},
 {category:"外貌",
- content:" 小狮子",},
+ content:" 三花，阴阳脸，白口罩，有狸花纹",},
 {category:"性格",
- content:" 亲人不可抱 可摸",},
+ content:" 柴柴从小就是6个兄弟姐妹里最乖的宝宝，性格特别好，从不抓人咬人，非常非常粘人，喜欢跟人说话，可以让人抱，被抱的时候会一直咕噜，喜欢被摸下巴，喜欢跳到腿上被按摩，即使见到生人也会去蹭蹭，熟悉一两天就可以抱着睡觉",},
 {category:"编写日期",
  content:" 2020-04-21",},
 ], 
 nums:[
 { num: 1 },
-{ num: 2 },
 ]},
   onPullDownRefresh:function(){
     wx.stopPullDownRefresh()

@@ -2,7 +2,23 @@
  Page({ 
  data: { 
  catlist: [
-  { name:"虎子"},
+  { name:"北北"},
+ { name:"大橘"},
+ { name:"小橘"},
+ { name:"嘟嘟"},
+ { name:"憨憨"},
+ { name:"叨仔"},
+ { name:"AJ"},
+ { name:"小满"},
+ { name:"java"},
+ { name:"十三"},
+ { name:"雪糕"},
+ { name:"铁铁"},
+ { name:"皮蛋"},
+ { name:"二五仔"},
+ { name:"柴柴"},
+ { name:"雪儿"},
+ { name:"虎子"},
 
     ],
     screenWidth: 0,

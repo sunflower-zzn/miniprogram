@@ -1,27 +1,28 @@
 Page({ 
  data: {
-catname:"虎子",
+catname:"二五仔",
  catitems:[ 
-{category:"昵称",
- content:" 虎爷/虎妞",},
 {category:"毛色",
- content:" 白狸",},
+ content:" 狸花",},
 {category:"性别",
- content:" 公",},
+ content:" 母",},
 {category:"状况",
  content:" 健康",},
 {category:"绝育情况",
- content:" 未绝育",},
+ content:" 已绝育",},
+{category:"绝育时间",
+ content:" 2020-03-16",},
+{category:"出生时间",
+ content:" 2019-07-01",},
 {category:"外貌",
- content:" 小狮子",},
+ content:" 狸花加白，似乎有美短的血统",},
 {category:"性格",
- content:" 亲人不可抱 可摸",},
+ content:" 活泼，黏人，每天会疯跑一会然后找地方睡大觉，话痨、很爱叫，智商不高傻傻的",},
 {category:"编写日期",
  content:" 2020-04-21",},
 ], 
 nums:[
 { num: 1 },
-{ num: 2 },
 ]},
   onPullDownRefresh:function(){
     wx.stopPullDownRefresh()

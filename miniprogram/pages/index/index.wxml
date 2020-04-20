@@ -21,7 +21,7 @@
   <block wx:for="{{catlist}}">
   <navigator url="/pages/cats/{{item.name}}/{{item.name}}" >
     <view class="catitem">
-        <image  class = 'avator' src="http://blackcloud37.tech/imgs/{{item.name}}/icon.jpg" mode='aspectFill' ></image>
+        <image  class = 'avator' src="https://thusasap-miniprogram-img.oss-cn-beijing.aliyuncs.com/{{item.name}}/icon.jpg" mode='aspectFill' ></image>
         <view class= "cat-name">{{item.name}}</view> 
     </view>
     </navigator>
